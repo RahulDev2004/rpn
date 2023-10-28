@@ -1,7 +1,8 @@
 "use client";
 
-import RetrieveSection from "@/components/retrieve";
-import StoreSection from "@/components/store";
+import CheckIp from "@/components/check";
+import Configure from "@/components/configure";
+import GetMyIp from "@/components/getMyIp";
 import { Separator } from "@/components/ui/separator";
 import { WalletSection } from "@/components/wallet";
 
@@ -13,7 +14,7 @@ import {
 } from "@web3modal/ethereum";
 import { Web3Modal } from "@web3modal/react";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { arbitrum, mainnet, polygon, localhost, Chain } from "wagmi/chains";
+import { arbitrum, mainnet, polygon, localhost, Chain, sepolia } from "wagmi/chains";
 
 const localnet: Chain = {
   id: 31337,
@@ -35,9 +36,8 @@ const localnet: Chain = {
 };
 
 // wallet configuration
-const chains = [arbitrum, mainnet, polygon, localhost, localnet];
-const projectId =
-  process.env.PROJECT_ID !== undefined ? process.env.PROJECT_ID : "";
+const chains = [arbitrum, mainnet, polygon, localhost, localnet, sepolia];
+const projectId = "c0600099e322ffe6c736e09570097b2f";
 
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);
 const wagmiConfig = createConfig({
@@ -54,9 +54,11 @@ export default function Home() {
         <div className="p-6">
           <WalletSection />
           <Separator className="my-6" />
-          <RetrieveSection />
+          <Configure/>
           <Separator className="my-6" />
-          <StoreSection />
+          <GetMyIp/>
+          <Separator className="my-6" />
+          <CheckIp/>
         </div>
       </WagmiConfig>
 
