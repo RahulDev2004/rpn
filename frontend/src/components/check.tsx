@@ -29,7 +29,7 @@ export default function CheckIp() {
   }
 
   useEffect(()=>{
-    setInterval(()=>{
+    setTimeout(()=>{
         readNewIp();
       }, 1000)
       readRealIp();

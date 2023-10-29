@@ -73,7 +73,7 @@ export function Combobox({options}: ICombobox) {
                 key={option.value}
                 value={option.value}
                 onSelect={(currentValue) => {
-                  setValue(currentValue === value ? "" : currentValue)
+                  setValue(currentValue)
                   setOpen(false)
                 }}
               >

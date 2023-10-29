@@ -36,7 +36,7 @@ const localnet: Chain = {
 };
 
 // wallet configuration
-const chains = [arbitrum, mainnet, polygon, localhost, localnet, sepolia];
+const chains = [sepolia, arbitrum, mainnet, polygon, localhost, localnet];
 const projectId = "c0600099e322ffe6c736e09570097b2f";
 
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })]);

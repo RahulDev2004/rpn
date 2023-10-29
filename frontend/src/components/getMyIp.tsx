@@ -31,9 +31,9 @@ export default function GetMyIp() {
 
   return (
     <>
-      <p className="font-bold">Save the Number</p>
+      <p className="font-bold">Check My IP over RPN</p>
       <br />
-      <Button onClick={RequestIp}>Store</Button>
+      <Button onClick={RequestIp}>Check</Button>
     </>
   );
 }
